@@ -1,0 +1,53 @@
+{
+  "headers": {
+    "Strict-Transport-Security": {
+      "type": "string",
+      "description": "HTTPS strict transport security header"
+    },
+    "X-Frame-Options": {
+      "type": "string",
+      "description": "Prevent this request from being loaded in any iframes",
+      "default": "DENY"
+    },
+    "X-Content-Type-Options": {
+      "type": "string",
+      "description": "Ensures each page has a content type and prevents browsers from doing MIME type sniffing",
+      "default": "nosniff"
+    },
+    "Status Code": {
+      "type": "integer",
+      "description": "The HTTP status code defining the error",
+      "default": 400
+    }
+  },
+  "schema": {
+    "title": "400 Error object",
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string",
+        "enum": [
+          "400"
+        ]
+      },
+      "title": {
+        "type": "string",
+        "enum": [
+          "Bad request"
+        ]
+      },
+      "description": {
+        "type": "string",
+        "enum": [
+          "You have sent a request which could not be understood."
+        ]
+      }
+    },
+    "required": [
+      "status",
+      "title",
+      "description"
+    ],
+    "additionalProperties": false
+  }
+}
